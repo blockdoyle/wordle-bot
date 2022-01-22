@@ -28,7 +28,7 @@ def GetRandomNonRepeatingCharWord(words):
     return random.choice(words)
 
 def RegularExpression(words):
-    pattern = input("Enter RGEX: ")
+    pattern = input("\nEnter RGEX: ")
     printWords = []
     for word in words:
         if re.search(pattern,word):
@@ -41,4 +41,6 @@ FirstWord = GetRandomNonRepeatingCharWord(FiveCharWordlist)
 
 print(f"Your first word is: {FirstWord}")
 while True:
-    print(RegularExpression(FiveCharWordlist))
+    regString = RegularExpression(FiveCharWordlist)
+    for word in regString:
+        print(word)
