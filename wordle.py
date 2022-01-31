@@ -23,16 +23,6 @@ def CheckNonRepeating(word):
             holder.append(char)
     return True
 
-def MakeFiveCharWordlist(words):
-    holder = []
-    for word in words:
-        if len(word) == 5:
-            if CheckNonRepeating(word) == True:
-                holder.append(word)
-            else:
-                pass
-    return holder
-
 def GetRandomNonRepeatingCharWord(words):
     return random.choice(words)
 
@@ -50,11 +40,10 @@ def RegularExpression(words):
     return printWords
 
 wordlist = OpenFile('wordlist.txt')
-FiveCharWordlist = MakeFiveCharWordlist(wordlist)
-FirstWord = GetRandomNonRepeatingCharWord(FiveCharWordlist)
+FirstWord = GetRandomNonRepeatingCharWord(wordlist)
 
 print(f"Your first word is: {FirstWord}")
 while True:
-    regString = RegularExpression(FiveCharWordlist)
+    regString = RegularExpression(wordlist)
     for word in regString:
         print(word)
